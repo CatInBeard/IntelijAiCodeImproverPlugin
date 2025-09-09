@@ -1,0 +1,40 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.github.catinbeard.AiCodeImprover</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>AiCodeImprover</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor url="https://github.com/catinbeard/intelij-ai-code-imporver-template">GitHub</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        AiCodeImprover is a plugin for IntelliJ IDEA that allows you to improve code with AI.<br>
+        <em>Use the power of artificial intelligence to optimize your code</em>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <action
+                id="com.github.catinbeard.aicodeimprover.ContextMenuAction"
+                class="com.github.catinbeard.aicodeimprover.ContextMenuAction"
+                text="AI Improve"
+                description="Selected code can be changed by AI with your instructions">
+            <add-to-group group-id="EditorPopupMenu" />
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl SPACE"/>
+        </action>
+    </actions>
+</idea-plugin>
