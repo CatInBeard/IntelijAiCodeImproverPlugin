@@ -60,7 +60,7 @@ Download and install from [Adoptium](https://adoptium.net/) or [Oracle](https://
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/catinbeard/intelij-ai-code-imporver-template.git
+   git clone https://github.com/CatInBeard/IntelijAiCodeImproverPlugin.git
    cd intelij-ai-code-imporver-template
    ```
 
@@ -77,9 +77,13 @@ Download and install from [Adoptium](https://adoptium.net/) or [Oracle](https://
 
 The build script will check for prerequisites and provide helpful error messages if Java is not installed.
 
+## Continuous Integration
+
+The project includes GitHub Actions CI/CD that automatically builds the plugin on every push to the `master` branch. You can download the latest build artifacts from the [Actions tab](https://github.com/CatInBeard/IntelijAiCodeImproverPlugin/actions) in the repository.
+
 ## Installation
 
-1. Download the plugin JAR from the [releases page](https://github.com/catinbeard/intelij-ai-code-imporver-template/releases) or build it from source
+1. Download the plugin JAR from the [releases page](https://github.com/CatInBeard/IntelijAiCodeImproverPlugin/releases) or build it from source
 2. In your JetBrains IDE, go to `File > Settings > Plugins`
 3. Click the gear icon and select `Install Plugin from Disk...`
 4. Select the downloaded or built JAR file
