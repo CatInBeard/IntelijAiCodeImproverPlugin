@@ -8,7 +8,7 @@
     <name>AiCodeImprover</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://github.com/catinbeard/intelij-ai-code-imporver-template">GitHub</vendor>
+    <vendor url="https://github.com/CatInBeard/IntelijAiCodeImproverPlugin">GitHub</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
@@ -39,7 +39,7 @@
                 text="AI Improve"
                 description="Selected code can be improved by AI with your custom instructions">
             <add-to-group group-id="EditorPopupMenu" />
-            <keyboard-shortcut keymap="$default" first-keystroke="ctrl SPACE"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt I"/>
         </action>
     </actions>
 </idea-plugin>
