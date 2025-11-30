@@ -27,12 +27,62 @@ This plugin works with all JetBrains IDEs based on the IntelliJ Platform 2025.1 
 - GoLand
 - And other JetBrains IDEs
 
+## Building from Source
+
+If you want to build the plugin yourself:
+
+### Prerequisites
+- **Java 21 or later** - Required for compilation
+- **Git** - For cloning the repository
+
+### Installing Java
+
+**Ubuntu/Debian:**
+```bash
+sudo apt update
+sudo apt install openjdk-21-jdk
+```
+
+**Arch Linux:**
+```bash
+sudo pacman -S jdk-openjdk
+```
+
+**macOS:**
+```bash
+brew install openjdk@21
+```
+
+**Windows:**
+Download and install from [Adoptium](https://adoptium.net/) or [Oracle](https://www.oracle.com/java/)
+
+### Build Steps
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/catinbeard/intelij-ai-code-imporver-template.git
+   cd intelij-ai-code-imporver-template
+   ```
+
+2. Run the build script:
+   ```bash
+   ./build.sh
+   ```
+   Or manually:
+   ```bash
+   ./gradlew build
+   ```
+
+3. The plugin JAR will be created in `build/libs/`
+
+The build script will check for prerequisites and provide helpful error messages if Java is not installed.
+
 ## Installation
 
-1. Download the plugin JAR from the [releases page](https://github.com/catinbeard/intelij-ai-code-imporver-template/releases)
+1. Download the plugin JAR from the [releases page](https://github.com/catinbeard/intelij-ai-code-imporver-template/releases) or build it from source
 2. In your JetBrains IDE, go to `File > Settings > Plugins`
 3. Click the gear icon and select `Install Plugin from Disk...`
-4. Select the downloaded JAR file
+4. Select the downloaded or built JAR file
 5. Restart your IDE
 
 ## Configuration
