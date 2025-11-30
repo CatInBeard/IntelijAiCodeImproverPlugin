@@ -25,14 +25,19 @@
           Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <notificationGroup id="AI Code Improver" displayType="BALLOON" />
+        <applicationConfigurable
+            parentId="tools"
+            instance="com.github.catinbeard.aicodeimprover.AiCodeImproverSettings"
+            id="aiCodeImprover.settings"
+            displayName="AI Code Improver" />
     </extensions>
 
     <actions>
         <action
                 id="com.github.catinbeard.aicodeimprover.ContextMenuAction"
                 class="com.github.catinbeard.aicodeimprover.ContextMenuAction"
-                text="Add Dummy AI Comments"
-                description="Selected code can be changed by AI with your instructions">
+                text="AI Improve"
+                description="Selected code can be improved by AI with your custom instructions">
             <add-to-group group-id="EditorPopupMenu" />
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl SPACE"/>
         </action>

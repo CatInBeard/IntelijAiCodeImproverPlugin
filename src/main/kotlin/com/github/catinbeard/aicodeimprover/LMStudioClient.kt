@@ -34,16 +34,12 @@ data class ChatCompletionRequest(
 data class Choice(val message: Message)
 data class ResponseCompleteData(val choices: List<Choice>)
 
-class LMStudioClient {
-    companion object {
-        private const val BASE_URL = "http://localhost:1234/api/v0"
-    }
-
+class LMStudioClient(private val baseUrl: String = "http://localhost:1234/api/v0") {
     private val client = OkHttpClient()
 
     fun getModels(): List<String> {
         val request = Request.Builder()
-            .url("$BASE_URL/models")
+            .url("$baseUrl/models")
             .get()
             .build()
 
@@ -60,7 +56,7 @@ class LMStudioClient {
     }
 
 
-    fun getSimpleAnswer(modelName: String, systemPrompt: String, userPrompt: String): String {
+    fun getSimpleAnswer(modelName: String, systemPrompt: String, userPrompt: String, temperature: Double = 0.1): String {
 
         val client = OkHttpClient.Builder()
             .connectTimeout(0, TimeUnit.SECONDS)
@@ -77,7 +73,7 @@ class LMStudioClient {
                 Message("system", systemPrompt),
                 Message("user", userPrompt)
             ),
-            temperature = 0.1,
+            temperature = temperature,
             max_tokens = -1,
             stream = false
         )
@@ -86,7 +82,7 @@ class LMStudioClient {
         val body = json.toRequestBody(mediaType)
 
         val request = Request.Builder()
-            .url("$BASE_URL/chat/completions")
+            .url("$baseUrl/chat/completions")
             .post(body)
             .build()
 
